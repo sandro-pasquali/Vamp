@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Grokio</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="gui/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="gui/jquery-treeview/jquery.treeview.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+        padding-top: 60px;
+        }
+      
+        /* box */
+        .box { font: 10px sans-serif; }
+        .box line, .box rect, .box circle { stroke: #000; stroke-width: 1.5px; fill: #fff; }
+        .box .center { stroke-dasharray: 3 3; }
+        .box .outlier { stroke: #ccc; fill: none; }
+
+        #heatmap svg {
+          width: 100%;
+          height: 500px;
+        }      
+        
+        
+        
+        .accordion-selected {
+            background: #00ccaa;
+        }
+            
+        .accordion-hover {
+            background: #d6d6d6;
+        }
+            
+        .accordion-trigger, .nav-data-metric {
+            cursor: pointer
+        }
+        
+        .accordion-body {}
+        
+        .well ul {
+            margin-bottom: 0px;
+        }
+    </style>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    	
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="container-fluid">
+      <a class="brand" href="#">Grok:io</a>
+      <ul class="nav"></ul>
+      <p class="pull-right">Logged in as <a href="#">username</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+    <div class="sidebar">
+        <div class="well">
+            <div class="metricdata">
+                <h5>Metrics</h5>
+            </div>
+        </div>
+        <div class="well">
+            <div class="groupdata">
+                <h5>Authority</h5>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content">
+    
+        <ul class="tabs" data-tabs="tabs">
+            <li class="dropdown" data-dropdown="dropdown">
+                <a href="#" class="dropdown-toggle">Data Groups</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#fat">One</a></li>
+                    <li><a href="#mdo">Two</a></li>
+                </ul>
+            </li>
+            <li id="tbody_percentiles" class="active" name="percentiles"><a href="#box_plot" ref="gui/d3/examples/data/morley.csv">Percentiles</a></li>
+            <li id="tbody_heatmap" class=""><a href="#heatmap">Heatmap</a></li>
+        </ul>
+    
+        <div class="tab-content">
+            <div class="tab-pane active" id="box_plot">
+                <div class="row">
+
+                </div>
+            </div>
+            <div class="tab-pane" id="heatmap">
+                <h6>Measure to Measure</h6>
+            </div>
+            
+        </div> <!-- end .tab-content -->
+        
+        <div id="temp_container" style="visibility:hidden"></div>
+             
+    </div> <!-- end .content -->
+    
+</div> <!-- end .container-fluid -->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="init.js"></script>
+<script type="text/javascript" src="gui/jquery-treeview/jquery.treeview.js"></script>
+<script type="text/javascript" src="gui/jquery-accordion/jquery.accordion.js"></script>
+<script type="text/javascript" src="gui/bootstrap/js/bootstrap-dropdown.js"></script>
+<script type="text/javascript" src="gui/bootstrap/js/bootstrap-tabs.js"></script>
+<script type="text/javascript" src="gui/bootstrap/js/bootstrap-modal.js"></script>
+<script type="text/javascript" src="gui/bootstrap/js/bootstrap-twipsy.js"></script>
+<script type="text/javascript" src="gui/bootstrap/js/bootstrap-popover.js"></script>
+<script type="text/javascript" src="gui/d3/d3.min.js"></script>
+<script type="text/javascript" src="gui/d3/d3.chart.js"></script>
+<script type="text/javascript" src="gui/d3/d3.csv.js"></script>
+<script type="text/javascript" src="gui/d3/d3.geo.js"></script>
+<script type="text/javascript" src="gui/d3/d3.geom.js"></script>
+<script type="text/javascript" src="visualizations/box_plot.js"></script>
+<script type="text/javascript" src="visualizations/heatmap.js"></script>
+
+</body>
+</html>
